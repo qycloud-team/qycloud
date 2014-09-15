@@ -27,7 +27,7 @@
 ## 安装
 
 ```bash
-npm install -g spmx
+npm install -g qycloud
 ```
 
 非win系统最好将npm的包安装在用户目录下，尽量避免使用 ``sudo`` 来安装。修改npm install -g安装目录的方法为：
@@ -39,41 +39,41 @@ npm config set prefix ~/npm
 echo -e '\nexport PATH=~/npm/bin:$PATH' >> ~/.bashrc
 # 重新载入.bashrc
 source ~/.bashrc
-# 安装spmx
-npm install -g spmx
+# 安装qycloud
+npm install -g qycloud
 ```
 
-安装成功后执行 ``spmx -h`` 即可看到相关开发命令帮助
+安装成功后执行 ``qycloud -h`` 即可看到相关开发命令帮助
 
 ## 获得一个todo样例项目
 
 ```bash
-# 使用spmx的install命令来获取开发资源
-spmx install seajs-todo-demo
+# 使用qycloud的install命令来获取开发资源
+qycloud install seajs-todo-demo
 ```
 
 在当前目录下即可看到令人期待的seajs模块化项目啦！
 
-> 如果你执行 ``spmx install seajs-todo-demo`` 命令没成功，可以git clone 这个项目： [seajs-todo-demo](https://github.com/fouber/seajs-todo-demo)
+> 如果你执行 ``qycloud install seajs-todo-demo`` 命令没成功，可以git clone 这个项目： [seajs-todo-demo](https://github.com/fouber/seajs-todo-demo)
 
 ## 让代码跑起来！
 
 首先，启动内置的调试服务器：
 
 ```bash
-spmx server start --no-rewrite
+qycloud server start --no-rewrite
 ```
 
-此时spmx会启动一个精巧的jetty服务器，并且打开浏览器访问了 http://127.0.0.1:8080 ，现在这个调试环境什么也没有，接下来，我们在命令行下cd到我们下载的样例项目中：
+此时qycloud会启动一个精巧的jetty服务器，并且打开浏览器访问了 http://127.0.0.1:8080 ，现在这个调试环境什么也没有，接下来，我们在命令行下cd到我们下载的样例项目中：
 
 ```bash
 cd todo-demo
 ```
 
-第三步，执行spmx的编译命令：
+第三步，执行qycloud的编译命令：
 
 ```bash
-spmx release
+qycloud release
 ```
 
 第四步，刷新浏览器，查看我们的项目。
@@ -83,7 +83,7 @@ spmx release
 1. 给所有资源加 ``md5版本戳``，执行：
 
     ```bash
-    spmx release -m
+    qycloud release -m
     ```
     
     然后刷新浏览器，看一下源码吧！
@@ -91,19 +91,19 @@ spmx release
 1. 压缩js、css、图片，执行：
 
     ```bash
-    spmx release -o
+    qycloud release -o
     ```
 
 1. 校验js，执行：
 
     ```bash
-    spmx release -l
+    qycloud release -l
     ```
 
 1. 自动csssprite，执行：
 
     ```bash
-    spmx release -p
+    qycloud release -p
     ```
     
     可以看到 ``#todo-list label`` 的图片都自动合并了哦
@@ -111,13 +111,13 @@ spmx release
 1. 所有静态资源加域名，先修改fis-conf.js文件，去除掉 ``第2行`` 的注释，然后执行：
 
     ```bash
-    spmx release -D
+    qycloud release -D
     ```
 
 1. 文件监听，执行：
 
     ```bash
-    spmx release -w
+    qycloud release -w
     ```
     
     命令行窗口不要关闭，然后去修改源码->保存->刷新浏览器，就能看到更新的效果。
@@ -125,7 +125,7 @@ spmx release
 1. 文件上传，执行：
 
     ```bash
-    spmx release -d remote
+    qycloud release -d remote
     ```
     
     就可以发布到我的一个小服务器上，然后浏览器访问： http://vm-1.chongzi.kd.io/
@@ -133,13 +133,13 @@ spmx release
 1. 加域名、压缩、加md5戳、校验、csssprite、把编译好的文件产出到output目录中（其实就是随意组合使用前面提到面的参数啦）：
 
     ```bash
-    spmx release -Domlp -d ../output
+    qycloud release -Domlp -d ../output
     ```
 
 1. 文件监听、启动live-reload服务器、同时发布到本地调试目录、outpu目录和远端服务器：
 
     ```bash
-    spmx release -wLd preview,remote,../output
+    qycloud release -wLd preview,remote,../output
     ```
 
     使用自动刷新功能需要添加 ``live-reload`` 浏览器插件，请google之，我没做可以自动添加脚本的功能，因为懒。。。

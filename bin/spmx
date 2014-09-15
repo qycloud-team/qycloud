@@ -1,3 +1,0 @@
-#!/usr/bin/env node
-
-require('../spmx.js').cli.run(process.argv);
