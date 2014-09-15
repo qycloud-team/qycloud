@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 开发seajs项目的超级利器！
 ======
 
@@ -180,3 +181,9 @@ qycloud release
 1. 扔在 ``lib`` 目录下的文件不被认为是模块化的，请直接在页面上使用script或link标签引用。
 
 > 如果使用中遇到什么觉得诡异的地方，欢迎issues留言
+=======
+qycloud
+=======
+
+the qycloud build tool base FIS and spmx
+>>>>>>> 76d8067e6163a66ad215344e9dede6ad4e7c329b
