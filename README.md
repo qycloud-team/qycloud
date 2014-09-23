@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 开发seajs项目的超级利器！
 ======
 
@@ -186,4 +185,3 @@ qycloud
 =======
 
 the qycloud build tool base FIS and spmx
->>>>>>> 76d8067e6163a66ad215344e9dede6ad4e7c329b
