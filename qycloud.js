@@ -11,19 +11,19 @@ fis.config.merge({
                 //直接引用为var $ = require('jquery');
                 reg: /^\/sea-modules\/([^\/]+)\/\1\.(js|coffee|less|css)$/i,
                 //是组件化的，会被jswrapper包装
-                isMod: true,
+                isMod: false,
                 //less和css文件会做csssprite处理
-                useSprite: true,
+                useSprite: false,
+                useOptimizer: false,
                 //id为文件夹名
                 id: '$1'
             },
             {
                 //sea-modules目录下的其他文件
                 reg: /^\/sea-modules\/(.*)\.(js|coffee|less|css)$/i,
-                //是组件化的，会被jswrapper包装
-                isMod: true,
-                //less和css文件会做csssprite处理
-                useSprite: true,
+                isMod: false,
+                useSprite: false,
+                useOptimizer: false,
                 //id是去掉sea-modules和.js后缀中间的部分
                 id: '$1'
             },
@@ -92,7 +92,7 @@ fis.config.merge({
         lint: {
             js: 'jshint'
         },
-        postpackager: 'seajs2'
+        postpackager: 'seajs-qycloud'
     },
     settings: {
         parser: {
@@ -104,7 +104,7 @@ fis.config.merge({
         lint: {
             jshint: {
                 //排除对lib和jquery、backbone、underscore的检查
-                ignored: [ 'lib/**', /jquery|backbone|underscore/i ],
+                ignored: [ 'lib/**', /jquery|backbone|underscore|\$|bootstrap/i ],
                 //使用中文报错
                 i18n: 'zh-CN'
             }
@@ -116,7 +116,7 @@ fis.config.merge({
             }
         },
         optimizer: {
-            'uglify-js': {
+            'uglify-js-qycloud': {
                 mangle: {
                     //不要压缩require关键字，否则seajs会识别不了require
                     except: [ 'require' ]

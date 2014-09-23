@@ -34,7 +34,8 @@
         "fis-parser-handlebars": "0.0.1",
         "fis-postpackager-simple": "^0.0.23",
         "fis-lint-jshint": "0.0.9",
-        "fis-postpackager-seajs2": "^0.0.1"
+        "fis-optimizer-uglify-js-qycloud": "^0.0.1",
+        "fis-postpackager-seajs-qycloud": "^0.0.2"
     },
     "bugs": {
         "url": "https://github.com/qycloud-team/qycloud/issues"
