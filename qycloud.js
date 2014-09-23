@@ -89,10 +89,18 @@ fis.config.merge({
             tpl: 'handlebars',
             hbs: 'handlebars'
         },
+
         lint: {
             js: 'jshint'
         },
-        postpackager: 'seajs-qycloud'
+
+        postpackager: 'seajs-qycloud',
+
+        optimizer: {
+            js: 'uglify-js-qycloud',
+            css: 'clean-css',
+            png: 'png-compressor'
+        }
     },
     settings: {
         parser: {
