@@ -1,6 +1,6 @@
 {
     "name": "qycloud",
-    "version": "0.0.8",
+    "version": "0.1.0",
     "description": "a wrapper of fis to build seajs project",
     "main": "qycloud.js",
     "bin": {
@@ -36,7 +36,7 @@
         "fis-lint-jshint": "0.0.9",
         "fis-optimizer-uglify-js-qycloud": "^0.0.1",
         "fis-postpackager-seajs-qycloud": "^0.0.2",
-        "fis-postprocessor-handlebars": "^0.0.1"
+        "fis-postprocessor-handlebars": "^0.0.4"
     },
     "bugs": {
         "url": "https://github.com/qycloud-team/qycloud/issues"
