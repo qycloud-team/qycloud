@@ -47,14 +47,6 @@ fis.config.merge({
                 release: false
             },
             {
-                //sea-modules目录下的其他文件
-                reg: "**.tpl",
-                isMod: false,
-                useSprite: false,
-                isJsLike: true,
-                release: false
-            },
-            {
                 //前端模板
                 reg: '**.tmpl',
                 //当做类html文件处理，可以识别<img src="xxx"/>等资源定位标识
@@ -72,9 +64,9 @@ fis.config.merge({
             //less输出为css文件
             less: 'css',
             //coffee输出为js文件
-            coffee: 'js',
-            tpl: 'js',
-            hbs: 'js'
+            coffee: 'js' ,
+            // tpl 编译为js模版函数
+            tpl: 'js'
         }
     },
     modules: {//fis插件配置
@@ -84,10 +76,11 @@ fis.config.merge({
             //.coffee后缀的文件使用fis-parser-coffee-script插件编译
             coffee: 'coffee-script',
             //.less后缀的文件使用fis-parser-less插件编译
-            less: 'less',
-            // 使用handlebars编译
-            tpl: 'handlebars',
-            hbs: 'handlebars'
+            less: 'less'
+        },
+
+        postprocessor: {
+            js: ['jswrapper','handlebars']
         },
 
         lint: {
@@ -102,6 +95,7 @@ fis.config.merge({
             png: 'png-compressor'
         }
     },
+
     settings: {
         parser: {
             'coffee-script': {
