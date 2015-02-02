@@ -1,44 +1,45 @@
 {
-    "name": "qycloud",
-    "version": "0.1.0",
-    "description": "a wrapper of fis to build seajs project",
-    "main": "qycloud.js",
-    "bin": {
-        "qycloud": "bin/qycloud"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/qycloud-team/qycloud.git"
-    },
-    "keywords": [
-        "fis",
-        "spm",
-        "seajs",
-        "requirejs",
-        "cmd",
-        "commonjs",
-        "modular",
-        "build",
-        "qycloud"
-    ],
-    "author": "googleyufei",
-    "license": "MIT",
-    "dependencies": {
-        "fis": "1.7.14",
-        "fis-parser-coffee-script": "0.0.2",
-        "fis-parser-less": "0.1.1",
-        "fis-parser-utc": "0.0.2",
-        "fis-parser-handlebars": "0.0.1",
-        "fis-postpackager-simple": "^0.0.23",
-        "fis-lint-jshint": "0.0.9",
-        "fis-optimizer-uglify-js-qycloud": "^0.0.1",
-        "fis-postpackager-seajs-qycloud": "^0.0.2",
-        "fis-postprocessor-handlebars": "^0.0.4"
-    },
-    "bugs": {
-        "url": "https://github.com/qycloud-team/qycloud/issues"
-    }
+  "name": "qycloud",
+  "version": "0.1.1",
+  "description": "a wrapper of fis to build seajs project",
+  "main": "qycloud.js",
+  "bin": {
+    "qycloud": "bin/qycloud"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qycloud-team/qycloud.git"
+  },
+  "keywords": [
+    "fis",
+    "spm",
+    "seajs",
+    "requirejs",
+    "cmd",
+    "commonjs",
+    "modular",
+    "build",
+    "qycloud"
+  ],
+  "author": "googleyufei",
+  "license": "MIT",
+  "dependencies": {
+    "fis": "1.7.14",
+    "fis-parser-coffee-script": "0.0.2",
+    "fis-parser-less": "0.1.1",
+    "fis-parser-utc": "0.0.2",
+    "fis-parser-handlebars": "0.0.1",
+    "fis-postpackager-simple": "^0.0.23",
+    "fis-lint-jshint": "0.0.9",
+    "qycloud-optimizer-uglify-js": "^0.0.1",
+    "qycloud-postpackager-seajs": "^0.0.2",
+    "qycloud-postpackager-mainpack": "^0.0.1",
+    "fis-postprocessor-handlebars": "^0.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/qycloud-team/qycloud/issues"
+  }
 }
