@@ -90,7 +90,7 @@ module.exports = {
         postpackager: ['mainpack', 'seajs'],
 
         optimizer: {
-            js: 'uglify-js',
+            js: ['ng-annotate', 'uglify-js'],
             css: 'clean-css',
             png: 'png-compressor'
         }
@@ -106,7 +106,7 @@ module.exports = {
         lint: {
             jshint: {
                 //排除对lib和jquery、backbone、underscore的检查
-                ignored: ['lib/**', /jquery|backbone|underscore|\$|bootstrap/i],
+                ignored: ['assets/**', /jquery|backbone|underscore|\$|bootstrap/i],
                 //使用中文报错
                 i18n: 'zh-CN'
             }
@@ -118,7 +118,7 @@ module.exports = {
             }
         },
         optimizer: {
-            'uglify-js-qycloud': {
+            'uglify-js': {
                 mangle: {
                     //不要压缩require关键字，否则seajs会识别不了require
                     except: ['require']
