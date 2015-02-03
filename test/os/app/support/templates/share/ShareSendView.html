@@ -1,0 +1,68 @@
+<p class="share-tip">{{'msgSendLinkFree'|translate}}</p>
+<form class="form-vertical" name="sendForm">
+    <div class="container-fluid valid-users" ng-show="addReceivers.length">
+        <div class="row-fluid" ng-repeat="addReceiver in addReceivers">
+            <span class="label label-blue">
+                <i class="icon-custom-send-type"></i>{{addReceiver}}
+                <i class="icon-custom-remove btn-link"></i>
+            </span>
+        </div>
+    </div>
+    <div class="control-group" ng-repeat="receiver in entLink.receivers track by $index">
+        <div class="controls row-fluid">
+            <div class="span7 send-input">
+                <input type="text"
+                       name="receiver"
+                       ng-required="true"
+                       style="width:280px;"
+                       enter-listener="addReceiver($index)"
+                       space-listener="addReceiver($index)"
+                       ng-model="entLink.receivers[$index]"
+                       jq-placeholder="{{'msgInputSpace'|translate}}"
+                       ng-pattern="constants.pattern.emailOrMobile"/>
+            </div>
+            <div class="span5 text-overflow"
+                 ng-show="sendForm.receiver.$dirty && sendForm.receiver.$invalid">
+                <i class="fa fa-exclamation red"></i>
+                <span class="label label-important" ng-show="sendForm.receiver.$error.required"> 必填</span>
+                <span class="label label-important" ng-show="sendForm.receiver.$error.pattern"> {{'msgInputValidUser'|translate}}</span>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="share-content">
+    <div class="send-content">
+        <label>{{'msgSendContent'|translate}}:</label>
+        {{entLink.createrName}}{{'msgShareFileTip'|translate}}
+
+        <a target="_blank" href="{{entLink.href}}">{{entLink.href}}</a>
+
+        <span ng-show="entLink.password"> 【密码:{{entLink.password}}】</span>
+
+        <span ng-show="entLink.expirationTime">【到期时间:{{entLink.expirationTime|dateTime}}】</span>
+    </div>
+    <div class="share-setting-view" ng-show="upload">
+        <!--设置密码和到期时间-->
+        <a class="btn-link set-pwd" href="###" ng-show="!entLink.password"
+           ng-click="updatePwd()">{{'msgSetPwd'|translate}}
+        </a>
+        <a class="btn-link set-pwd" href="###" ng-show="entLink.password"
+           ng-click="cancelSetPwd()">取消设置
+        </a>
+        <span class="pipe">|</span>
+        <a class="btn-link cancel-expire" ng-click="updateExpiredTime()"
+           ng-show="!entLink.expirationTime"
+           href="###">设置到期时间</a>
+        <a class="btn-link cancel-expire" ng-click="cancelSetTime()"
+           ng-show="entLink.expirationTime"
+           href="###">{{'msgCancelExpireDate'|translate}}</a>
+
+        <div share-time
+             ent-link="entLink"
+             update-expired-time="updateExpiredTime(expireDate)"></div>
+
+    </div>
+</div>
+<div class="ac btns">
+    <span class="btn btn-blue btn-link-send sendLink" ng-click="sendLink()">{{'msgSendLink'|translate}}</span>
+</div>

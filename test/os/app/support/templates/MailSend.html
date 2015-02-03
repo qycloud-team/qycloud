@@ -1,0 +1,35 @@
+<form class="form-horizontal" name="validateForm">
+    <div class="control-group">
+        <div class="controls">
+            <div>
+                系统给您的注册邮箱<strong>{{user.mail}}</strong>发送了一封验证邮件,请登录邮箱查看
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">邮箱地址:</div>
+        <div class="controls">
+            <input type="text"
+                   name="mail"
+                   jq-placeholder="{{'msgUsualMailValidate'|translate}}"
+                   ng-model="user.mail"
+                   value="mail">
+
+            <div class="help-inline">
+                <button class="btn btn-blue" ng-click="invalidateMail()">验证</button>
+            </div>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="control-label">手机号码:</div>
+        <div class="controls">
+            <input type="text" class="input-xlarge"
+                   name="phone"
+                   ng-model="user.phone"/>
+
+            <div class="help-inline">
+                <button class="btn btn-blue" ng-click="invalidatePhone()">验证</button>
+            </div>
+        </div>
+    </div>
+</form>

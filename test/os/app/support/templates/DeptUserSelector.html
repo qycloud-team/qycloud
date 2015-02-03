@@ -1,0 +1,39 @@
+<div class="dept-user-selector row-fluid">
+    <div class="span6 user-list"
+         dept-user-tree
+         settings="{'showDeptPath': true}"
+         onselectdept="onSelectDept(dept)"
+         onselectuser="onSelectUser(user)">
+    </div>
+    <div class="span6 selected-list">
+        <div class="row-fluid select-count">
+            <div class="span8 offset1">已选择账号(&nbsp;<strong style="color: #15c63a;">
+                {{selectUsers.length + selectDepts.length}}</strong>&nbsp;)
+            </div>
+            <div class="span3">
+                <button class="btn btn-link" ng-click="selectUsers = []; selectDepts = []">清空</button>
+            </div>
+        </div>
+
+        <ul class="row-fluid select-users">
+            <li ng-repeat="dept in selectDepts">
+                <div class="span9 offset1 text-overflow" title="{{dept.name}}">
+                    {{dept.name}}(部门)
+                </div>
+                <div class="span2">
+                    <i class="fa fa-times cursor-pointer" ng-click="selectDepts.splice($index, 1)"></i>
+                </div>
+            </li>
+            <li ng-repeat="user in selectUsers">
+                <div class="row-fluid">
+                    <div class="span9 offset1 text-overflow" title="{{user|displayName2}}">
+                        {{user|displayName2}}(用户)
+                    </div>
+                    <div class="span2">
+                        <i class="fa fa-times cursor-pointer" ng-click="selectUsers.splice($index, 1)"></i>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

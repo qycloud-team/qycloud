@@ -1,0 +1,23 @@
+<div class="dept-selector">
+    <div class="row-fluid first" ng-show="setting.showSearch">
+        <div class="input-append">
+            <input class="input-xlarge bold" type="text"
+                   jq-placeholder="{{'msgSearchAllFile'|translate}}"
+                   ng-model="searchKey"
+                   enter-listener="search()">
+            <span class="add-on" ng-click="search()"><i class="icon-custom-search-blue"></i></span>
+        </div>
+    </div>
+    <div class="row-fluid" ng-show="mode === 'normal'">
+        <ul class="ztree qyc-tree dept-tree" ng-transclude></ul>
+    </div>
+    <ul ng-show="mode === 'search'" class="search-list">
+        <li ng-show="searchList.length === 0">
+            没有搜索到匹配的部门
+        </li>
+        <li ng-repeat="dept in searchList" ng-click="doSelectDept(dept.deptId)"
+            ng-class="!!selectDept && dept.deptId === selectDept.deptId && 'active'">
+            {{dept.name}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+<p class="share-tip">{{'msgCopyLinkTip'|translate}}</p>
+<div class="share-info">
+    <a target="_blank" href="{{entLink.href}}">{{entLink.href}}</a>
+    <span ng-show="entLink.password">【密码:{{entLink.password}}】</span>
+    <span ng-show="entLink.expirationTime">【到期时间:{{entLink.expirationTime|dateTime}}】</span>
+</div>
+
+<div class="share-setting-view" ng-show="upload" style="margin:10px 0;">
+    <a class="btn-link set-pwd" href="###" ng-show="!entLink.password" ng-click="updatePwd()">{{'msgSetPwd'|translate}}</a>
+    <a class="btn-link set-pwd" href="###" ng-show="entLink.password" ng-click="cancelSetPwd()">取消设置</a>
+    <span class="pipe">|</span>
+    <a class="btn-link cancel-expire"
+       ng-show="!entLink.expirationTime">设置到期时间</a>
+    <a class="btn-link cancel-expire" ng-click="cancelSetTime()"
+       ng-show="entLink.expirationTime">{{'msgCancelExpireDate'|translate}}</a>
+    <div share-time
+         ent-link="entLink"
+         update-expired-time="updateExpiredTime(expireDate)"></div>
+</div>
+<div class="ac btns" style="position:relative;">
+    <span class="btn btn-blue btn-link-copy">{{'msgCopyLink'|translate}}</span>
+    <span id="createCopyFlash"></span>
+</div>

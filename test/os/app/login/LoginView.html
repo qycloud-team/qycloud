@@ -1,0 +1,86 @@
+<form class="login-form" name="loginForm">
+    <div class="login-form-view">
+        <div class="control-group control-title">
+            <div class="title ac">{{'msg1'|translate}}</div>
+        </div>
+        <div class="ac login-message">
+            <div class="help-inline message red" id="errorTip" ng-show="loginForm.$invalid">
+                {{formError}}
+            </div>
+        </div>
+
+        <div class="control-group" ng-hide="loginBean.mode == 'Quick'">
+            <div class="input-icon ac">
+                <i class="icon-input-ent reglogin"></i>
+            </div>
+            <input type="text"
+                   jq-placeholder="{{'msgEntName'|translate}}"
+                   ng-model="loginBean.entName"
+                   name="entName"
+                   ng-required="true"
+                   autofocus="autofocus"
+                   enter-listener="onUserLogin()">
+        </div>
+
+        <div class="control-group">
+            <div class="input-icon ac">
+                <i class="icon-input-account reglogin"></i>
+            </div>
+            <input type="text"
+                   jq-placeholder="{{'msgMailOrPhone'|translate}}"
+                   ng-model="loginBean.account"
+                   name="account"
+                   autofocus="autofocus"
+                   ng-required="true"
+                   enter-listener="onUserLogin()">
+        </div>
+
+        <div class="control-group">
+            <div class="input-icon ac">
+                <i class="icon-input-password reglogin"></i>
+            </div>
+            <input type="password"
+                   jq-placeholder="{{'msgLoginPwd'|translate}}"
+                   ng-model="loginBean.password"
+                   name="password"
+                   ng-required="true"
+                   enter-listener="onUserLogin()">
+        </div>
+
+        <div class="control-group">
+            <div style="width:50%" class="fl al">
+                <a ng-href="{{constants.getRegisterUrl()}}" class="to-reg green">{{'msgFreeReg'|translate}}</a>
+            </div>
+            <div style="width:50%" class="fr ar">
+                <a ng-href="{{constants.getRegisterUrl(null, 'find/pwd')}}" class="to-get blue">{{'msgGetPwd'|translate}}</a>
+            </div>
+        </div>
+        <div class="control-group">
+            <a class="btn blue-btn main-btn login-btn"
+               ng-class="commit && 'disabled'"
+               ng-click="!commit && onUserLogin()">
+                {{loginBtnText}}
+            </a>
+        </div>
+        <div class="control-group shift-login">
+            <button class="btn btn-link" ng-click="onSwitchLogin()">
+                <i class="icon-login-shift reglogin"></i> {{switchLoginTxt | translate}}
+            </button>
+            <div class="lang-switch fr">
+                <label>{{'msgLangSetting'|translate}}: </label>
+
+                <div class="btn-group">
+                    <button class="btn dropdown-toggle lang-btn" data-toggle="dropdown">
+                        {{$parent.lang | langFilter}} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat="lang in ['zh_CN', 'zh_TW','en_US']" ng-click="onSwitchLang(lang)">
+                            <a class="lang-change" href="#!">{{lang | langFilter}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="service-number">{{'msg1188'|translate}}：400-030-1108</div>
+    </div>
+</form>

@@ -1,0 +1,103 @@
+<div class="permission-selector">
+    <div class="shortcuts fl">
+        <div class="permission-types ac"><strong>{{'msg420'|translate}}</strong></div>
+        <ul class="shortcut-items">
+            <li ng-class="permission.mode == 'read' && 'active'" ng-click="permission.changeMode('read')">
+                <a>{{'msg421'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'upload' && 'active'" ng-click="permission.changeMode('upload')">
+                <a>{{'msg422'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'download' && 'active'" ng-click="permission.changeMode('download')">
+                <a>{{'msg423'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'read,upload' && 'active'" ng-click="permission.changeMode('read,upload')">
+                <a>{{'msg424'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'read,download' && 'active'" ng-click="permission.changeMode('read,download')">
+                <a>{{'msg425'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'all' && 'active'" ng-click="permission.changeMode('all')">
+                <a>{{'msg426'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+            <li ng-class="permission.mode == 'user' && 'active'" ng-click="permission.changeMode('user')">
+                <a>{{'msg427'|translate}}</a><span class="blue-right-arrow-8"></span></li>
+        </ul>
+    </div>
+    <div class="permission-list">
+        <div class="title-list ac"><strong>{{'msg428'|translate}}</strong></div>
+        <div class="permission-checks">
+            <ul>
+                <li class="createFolder-check" ng-click=" permission.toggle('createFolder')">
+                    <span class='checkbox-sprite' name="createFolder"
+                          ng-class="{'true':permission.createFolder,'cursor-default':permission.mode != 'user'}"></span>{{'msg585'|translate}}
+                </li>
+                <li class="read-check" ng-click=" permission.toggle('read')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.read, 'cursor-default': permission.mode != 'user'}"></span>
+                    {{'msg260'|translate}}
+                </li>
+                <li class="upload-check" ng-click=" permission.toggle('upload')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.upload, 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg258'|translate}}
+                </li>
+                <li class="download-check" ng-click=" permission.toggle('download')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.download, 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg259'|translate}}
+                </li>
+                <li class="share-check" ng-click=" permission.toggle('share')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.share, 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg262'|translate}}
+                </li>
+                <br/>
+
+                <li class="write-check" ng-click=" permission.toggle('write')" style="min-width:88px">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.write, 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg264'|translate}}
+                </li>
+                <li class="delete-check" ng-click=" permission.toggle('delete')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission['delete'], 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg156'|translate}}
+                </li>
+                <li class="local-check" ng-click=" permission.toggle('local')">
+                    <span class='checkbox-sprite'
+                          ng-class="{'true': permission.local, 'cursor-default': permission.mode != 'user' }"></span>
+                    {{'msg435'|translate}}
+                </li>
+            </ul>
+        </div>
+        <div class="permission-intros">
+            <ul class="permission-item" ng-show="permission.createFolder">
+                <li class="title">新建文件夹</li>
+                <li class="intro">可以新建文件夹</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.read">
+                <li class="title">{{'msg260'|translate}}</li>
+                <li class="intro">{{'msg439'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.upload">
+                <li class="title">{{'msg258'|translate}}</li>
+                <li class="intro">{{'msg441'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.download">
+                <li class="title">{{'msg259'|translate}}</li>
+                <li class="intro">{{'msg443'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.share">
+                <li class="title">{{'msg262'|translate}}</li>
+                <li class="intro">{{'msg445'|translate}}\{{'msg446'|translate}}\{{'msg447'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.write">
+                <li class="title">{{'msg264'|translate}}</li>
+                <li class="intro">{{'msg449'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission['delete']">
+                <li class="title">{{'msg156'|translate}}</li>
+                <li class="intro">{{'msg451'|translate}}</li>
+            </ul>
+            <ul class="permission-item" ng-show="permission.local">
+                <li class="title">{{'msg435'|translate}}</li>
+                <li class="intro">PC{{'msg453'|translate}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

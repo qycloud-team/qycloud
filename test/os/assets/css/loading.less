@@ -1,0 +1,74 @@
+.welcomePage {
+  width: 100%;
+  height: 100%;
+  background-color: #1d90db;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  table {
+    width: 100%;
+    height: 100%;
+  }
+
+  .progressWrap {
+    width: 330px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+
+    .progressBar {
+      margin-top: 30px;
+      background-color: #2f91c7;
+      height: 3px;
+
+      .progressBarRate {
+        width: 99%;
+        height: 3px;
+        background-color: #fffa70;
+        animation: progressBarRateKey 5s;
+        -moz-animation: progressBarRateKey 5s;
+        -webkit-animation: progressBarRateKey 5s;
+        -o-animation: progressBarRateKey 5s;
+      }
+    }
+  }
+}
+
+@keyframes progressBarRateKey {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 99%;
+  }
+}
+
+@-moz-keyframes progressBarRateKey {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 99%;
+  }
+}
+
+@-webkit-keyframes progressBarRateKey {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 99%;
+  }
+}
+
+@-o-keyframes progressBarRateKey {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 99%;
+  }
+}

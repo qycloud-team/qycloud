@@ -1,0 +1,13 @@
+<div class="input-append input-prepend search-box">
+    <span class="add-on" ng-click="cancelSearch()" ng-show="searchKey">
+        <i class="fa fa-chevron-left cursor-pointer"></i>
+    </span>
+    <input class="keyword"
+           type="text"
+           jq-placeholder="{{placeholder}}"
+           ng-model="searchKey"
+           enter-listener="onSearch()">
+    <span class="add-on" ng-click="onSearch()">
+        <i class="icon-custom-search-blue cursor-pointer"></i>
+    </span>
+</div>

@@ -1,0 +1,252 @@
+@import "config";
+
+.ztree.qyc-tree {
+
+  .ico_close, .ico_open {
+    display: none !important;
+  }
+
+  ul[class^='level'] {
+    margin-left: 10px;
+  }
+
+  li {
+    white-space: nowrap;
+
+    a {
+      height: 20px;
+      line-height: 1.5em;
+      display: inline-block;
+      text-decoration: none;
+      color: #999;
+      font-size: 13px;
+
+      > span {
+        font-size: 13px;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &.curSelectedNode {
+        background-color: #2978ca;
+        border: 0;
+        opacity: 1;
+        padding-top: 0;
+        height: 20px !important;
+
+        span {
+          color: #FFF;
+        }
+      }
+    }
+
+    span.button {
+      height: 13px;
+      width: 13px;
+      display: inline-block;
+      background-image: url(@icons-img);
+
+      &.switch {
+        padding-top: 2px;
+      }
+
+      &.noline_docu {
+        display: none;
+      }
+
+      &.noline_close {
+        background-position: -296px 0;
+      }
+
+      &.noline_open, &.center_open {
+        background-position: -309px -41px;
+        height: 13px;
+        width: 13px;
+      }
+
+      &.noline_close, &.center_close {
+        background-position: -309px -55px;
+        height: 13px;
+        width: 13px;
+        margin-top: 0;
+      }
+
+      &.folder_ico_open {
+        background-position: -266px -55px;
+      }
+
+      &.folder_ico_close, &.folder_ico_docu {
+        background-position: -266px -41px;
+      }
+
+      &.folder_ico_docu {
+        margin-left: 0;
+      }
+    }
+
+    .curSelectedNode {
+
+      span {
+        color: @font-color-file-tree-curr;
+      }
+
+      span.button {
+        &.folder_ico_docu {
+          background-position: -238px -41px;
+        }
+
+        &.folder_ico_open {
+          background-position: -238px -55px;
+        }
+
+        &.folder_ico_close {
+          background-position: -238px -41px;
+        }
+      }
+    }
+  }
+}
+
+.qyc-tree.folder-tree {
+
+  li {
+    a {
+      height: 20px;
+      line-height: 1em;
+      padding: 0;
+    }
+
+    span.button {
+      margin: 0 2px 2px;
+
+      &.chk {
+        width: 17px;
+        height: 17px;
+        cursor: pointer;
+
+        &.checkbox_false_part,
+        &.checkbox_false_part_focus,
+        &.checkbox_false_full,
+        &.checkbox_false_full_focus {
+          background: url(@icons-img) -574px -40px no-repeat;
+        }
+
+        &.checkbox_true_full,
+        &.checkbox_true_full_focus,
+        &.checkbox_true_part,
+        &.checkbox_true_part_focus {
+          background: url(@icons-img) -593px -42px no-repeat;
+        }
+
+      }
+    }
+  }
+
+  &.p-s-no-related li {
+    span.button.chk {
+      &.checkbox_true_part, &.checkbox_true_part_focus {
+        background-position: -365px -14px;
+      }
+    }
+  }
+}
+
+.qyc-tree.dept-tree {
+  overflow: auto;
+
+  li {
+    a.department > span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #518cb6;
+    }
+
+    a.curSelectedNode .dept-setting-btn {
+      display: inline-block;
+    }
+
+    span.user_avatar_ico_docu {
+      width: 18px;
+    }
+  }
+}
+
+.qyc-tree.folder-tree {
+
+  li {
+    span#entFolderTree_1_ico {
+      background-position: -252px -41px;
+    }
+
+    span#personFolderTree_1_ico {
+      background-position: -378px -195px; /*soho*/
+    }
+
+    .curSelectedNode {
+
+      span#entFolderTree_1_ico {
+        background-position: -224px -41px;
+      }
+
+      span#personFolderTree_1_ico {
+        background-position: -378px -209px;
+      }
+    }
+  }
+}
+
+.ztree.dept-user-tree {
+
+  .row-fluid.first {
+    border-bottom: 1px solid @border-color;
+    padding-bottom: 0;
+  }
+
+  .search-item {
+    cursor: pointer;
+
+    :hover, &.active {
+      background-color: #1694f3;
+      color: #ffffff;
+    }
+  }
+}
+
+.ztree.role-user-tree {
+
+  .row-fluid.first {
+    border-bottom: 1px solid @border-color;
+    padding-bottom: 0;
+  }
+
+  .search-item {
+    cursor: pointer;
+
+    :hover, &.active {
+      background-color: #1694f3;
+      color: #ffffff;
+    }
+  }
+}
+
+.qyc-tree.role-tree {
+  overflow: auto;
+
+  li {
+    a.rolelist > span {
+      font-size: 12px;
+      font-weight: 700;
+      color: #518cb6;
+    }
+
+    a.curSelectedNode .role-setting-btn {
+      display: inline-block;
+    }
+
+    span.user_avatar_ico_docu {
+      width: 18px;
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html xml:ng="http://angularjs.org" id="ng-app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache"/>
+    <title>用户登录-燕麦企业云盘</title>
+    <link rel="import" href="_header.html?__inline"/>
+    <link rel="stylesheet" href="../assets/css/pub-login.less?__inline"/>
+</head>
+<body>
+<link rel="import" href="_common.html?__inline"/>
+<div class="main container" id="main" ng-controller="HeaderCtrl" ng-cloak>
+    <div class="header" id="header">
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="navbar-inner custom-header">
+                <div class="container">
+                    <div class="brand">
+                        <span id="showLog"><a href="./login.html">{{'msgLogin'|translate}}</a></span>
+                        <span id="showReg"><a href="./register.html">{{'msgRegister'|translate}}</a></span>
+                    </div>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav row">
+                            <li class="span2">
+                                <a href="http://www.oatos.com">
+                                    <img src="../assets/img/common/logo.png" class="logo-img"/>
+                                </a>
+                            </li>
+                            <li class="span1 offset1"><a target="_blank" href="http://www.oatos.com/functions/">{{'msgProductFeatures'|translate}}</a>
+                            </li>
+                            <li class="span1"><a target="_blank" href="http://www.oatos.com/privatecloud/">{{'msg4'|translate}}</a>
+                            </li>
+                            <li class="span1">
+                                <a target="_blank" href="http://www.oatos.com/casestudy/">{{'msg5'|translate}}</a></li>
+                            <li class="span1">
+                                <a target="_blank" href="http://www.oatos.com/safety/">{{'msgSafety'|translate}}</a>
+                            </li>
+                            <li class="span1">
+                                <a target="_blank" href="http://www.oatos.com/help/">{{'msg7'|translate}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="login-view">
+        <div class="all-col main-banner">
+            <div class="main-col">
+                <div class="main-img ar">
+                </div>
+                <ng-view></ng-view>
+            </div>
+        </div>
+        <div class="main-col">
+            <ul class="clients ac">
+                <li class="download-title">{{'msg6' | translate}}</li>
+                <li style="margin-left:18px;">
+                    <a href="http://www.oatos.com/download/" target="_blank" title="windows {{'msg901' | translate}}"><i class="icon-windows reglogin"></i></a>
+                </li>
+                <li><a title="Mac {{'msg901' | translate}}"><i class="icon-mac reglogin"></i></a></li>
+                <li>
+                    <a href="http://itunes.apple.com/cn/app/id673863619" target="_blank" title="iPhone {{'msg901' | translate}}"><i class="icon-iphone reglogin"></i></a>
+                </li>
+                <li>
+                    <a href="http://app.oatos.com/mobile/oatos_android.apk" target="_blank" title="Android {{'msg901' | translate}}"><i class="icon-android reglogin"></i></a>
+                </li>
+                <li>
+                    <a href=" http://itunes.apple.com/cn/app/id777401801" target="_blank" title="iPad {{'msg901' | translate}}"><i class="icon-ipad reglogin"></i></a>
+                </li>
+                <li><a style="position:relative;"><i class="icon-code2d reglogin"></i>
+
+                    <div class="code2d-bg"></div>
+                </a></li>
+            </ul>
+        </div>
+        <a id="bizQQ_WPA" class="bizQQ_WPA" target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAwMzUzMV8xMDc2OTBfNDAwMDMwMTEwOF8yXw">
+            <i class="cs-icon"></i> </a>
+    </div>
+</div>
+<script type="text/ng-template" id="loginform.html" src="../app/login/LoginView.html?__inline"></script>
+<script type="text/javascript">
+    seajs.use([
+        'jquery/jquery-all',
+        'commons/commons-all',
+        'angular/angular-all',
+        'app/support/main'
+    ], function () {
+        seajs.use('app/login/main', function () {
+            $(".welcomePage").addClass('hide-force');
+        });
+    });
+</script>
+</body>
+</html>

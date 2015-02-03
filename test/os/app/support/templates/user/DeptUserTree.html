@@ -1,0 +1,23 @@
+<div class="dept-user-tree">
+    <div class="row-fluid first" ng-hide="settings.hideSearch">
+        <div search-box
+             placeholder="请输入您要搜索的内容"
+             search=onSearch(searchKey)
+             cancel="goBack()">
+
+        </div>
+    </div>
+    <div class="row-fluid" ng-show="mode === 'normal'">
+        <ul class="ztree qyc-tree dept-tree"
+            ng-transclude></ul>
+    </div>
+    <div ng-show="mode === 'search'" class="search-list">
+        <div class="row-fluid" ng-show="searchList.length === 0">
+            没有搜索到匹配的用户
+        </div>
+        <div class="row-fluid search-item" ng-repeat="user in searchList"
+             ng-click="doSelectUser(user)">
+            <div user-item user="user"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="modal fade login-box"
+     modal-show="toggleby">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h3>用户登录</h3>
+    </div>
+    <div class="modal-body">
+        <form class="login-form" name="loginForm">
+            <div class="row-fluid title">
+                登 录
+            </div>
+            <div class="ac login-message" style="height: 30px;">
+                <div class="help-inline message red" id="errorTip" ng-show="formError">
+                    {{formError}}
+                </div>
+            </div>
+
+            <div class="control-group">
+                <div class="input-icon ac">
+                    <i class="icon-input-account reglogin"></i>
+                </div>
+                <input type="text"
+                       jq-placeholder="{{'msgMailOrPhone'|translate}}"
+                       ng-model="loginBean.account"
+                       name="account"
+                       autofocus="autofocus"
+                       ng-required="true"
+                       enter-listener="onUserLogin()">
+            </div>
+
+            <div class="control-group">
+                <div class="input-icon ac">
+                    <i class="icon-input-password reglogin"></i>
+                </div>
+                <input type="password"
+                       jq-placeholder="{{'msgLoginPwd'|translate}}"
+                       ng-model="loginBean.password"
+                       name="password"
+                       ng-required="true"
+                       enter-listener="onUserLogin()">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-blue"
+                ng-class="commit && 'disabled'"
+                ng-click="!commit && onUserLogin()">
+            登录
+        </button>
+        <button class="btn btn-white-blue" data-dismiss="modal">取消</button>
+    </div>
+</div>

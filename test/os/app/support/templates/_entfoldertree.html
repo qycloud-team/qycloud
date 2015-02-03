@@ -1,0 +1,14 @@
+<div class="ent-folder-selector">
+    <div class="row-fluid first hide-force">
+        <div class="input-append" style="margin: 10px ">
+            <input class="input-xlarge bold" type="text"
+                   jq-placeholder="{{'msgSearchAllFile'|translate}}"
+                   ng-model="searchKey"
+                   enter-listener="search()">
+            <span class="add-on" ng-click="search()"><i class="icon-custom-search-blue"></i></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <ul id="ent-folder-selector" class="ztree qyc-tree folder-tree" ng-transclude></ul>
+    </div>
+</div>

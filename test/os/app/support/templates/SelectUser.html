@@ -1,0 +1,22 @@
+<div class="modal fade select-user"
+     modal-show="modal.showSelectUser">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3> 选择账号</h3>
+    </div>
+    <div class="modal-body">
+        <div class="span6 user-list"
+             dept-user-tree
+             settings="{'dblclick': false}"
+             onselectuser="onSelectUser(user)">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-blue"
+                data-dismiss="modal"> 确定
+        </button>
+        <button class="btn btn-white-blue"
+                ng-click="onSelectUser(null); modal.showSelectUser = false"> 取消
+        </button>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+define("jquery/plugins/select2/select2_locale_zh-CN",function(a){
+    var d=a("jquery");!function(a){"use strict";a.extend(a.fn.select2.defaults,{formatNoMatches:function(){return"\u6ca1\u6709\u627e\u5230\u5339\u914d\u9879"},formatInputTooShort:function(a,b){var c=b-a.length;return"\u8bf7\u518d\u8f93\u5165"+c+"\u4e2a\u5b57\u7b26"},formatInputTooLong:function(a,b){var c=a.length-b;return"\u8bf7\u5220\u6389"+c+"\u4e2a\u5b57\u7b26"},formatSelectionTooBig:function(a){return"\u4f60\u53ea\u80fd\u9009\u62e9\u6700\u591a"+a+"\u9879"},formatLoadMore:function(){return"\u52a0\u8f7d\u7ed3\u679c\u4e2d..."},formatSearching:function(){return"\u641c\u7d22\u4e2d..."}})}(d)
+});

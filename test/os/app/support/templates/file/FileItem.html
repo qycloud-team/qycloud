@@ -1,0 +1,32 @@
+<ul class="row-fluid list-items">
+    <li class="span1 ac">
+    <span class='checkbox-sprite'
+          ng-click="$parent.checkedFiles = toggleCheck.multiCheck(fileInfo,files)"
+          ng-class="fileInfo.checked && 'true'"></span>
+    </li>
+    <li class="span4 file-name text-overflow"
+        ng-click="$parent.checkedFiles = toggleCheck.toggleCheck(fileInfo,files)">
+        <a href="#{{fileInfo.openFolderUrl}}" class="file-name" title="{{fileInfo.name}}">
+            <i class="file-icon-medium {{fileInfo.type|type2icon}}" href="#!{{fileInfo.openFolderUrl}}"></i>
+            <span>{{fileInfo.name}} </span>
+        </a>
+    </li>
+    <li class="span1">
+        <a class="btn btn-link file-icon-unlock" href="###">
+            <i class="icon-custom-lock"></i></a>
+        <a class="btn btn-link file-icon-delattention" href="###">
+            <i class="icon-custom-attention"></i></a>
+        <a class="btn btn-link file-icon-delshare" href="###">
+            <i class="icon-custom-share"></i></a>
+        <a class="btn btn-link file-icon-convert" href="###"
+           title="{{'msg598'|translate}}">
+            <i class="icon-spinner icon-spin"></i></a>
+    </li>
+    <li class="span1">{{fileInfo.size|sizeFilter}}</li>
+    <li class="span2"> {{fileInfo.updateTime|dateTime}}</li>
+    <li class="span3 text-overflow">
+        <a href="#!{{fileInfo.openFolderUrl}}"
+           class="file-name"
+           title="{{'msg590'|translate}}">{{fileInfo.path}}</a>
+    </li>
+</ul>

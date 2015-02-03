@@ -1,0 +1,12 @@
+<ul class="row-fluid user-item">
+    <li class="span1"></li>
+    <li class="span2" style="margin: 6px 0;">
+        <img class="img-circle"
+             src="../../../../assets/img/defaultAvatar64man.png"
+             ng-src="{{user.icon|usericon:user.gender}}" alt="Icon"/>
+    </li>
+    <li class="span9">
+        <strong class="text-overflow">{{user|displayName}}</strong>
+        <div style="color: #DDD">{{user.deptName || '-'}}</div>
+    </li>
+</ul>

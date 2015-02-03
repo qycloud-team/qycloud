@@ -1,0 +1,31 @@
+<div class="modal fade zip-download"
+     modal-show="modal.zipDownload">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>{{'msg534'| translate}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="download-tips">
+            <img class="loading-img"
+                 ng-show="downloadBean.status === 'zipping'"
+                 src="../../../assets/img/common/loading.gif" width="31" height="31"/>
+            <strong ng-show="downloadBean.status === 'zipping'">
+                {{'msg535'| translate}}, {{'msg536'|translate}}!
+            </strong>
+            <strong ng-show="downloadBean.status === 'success'">
+                {{'msgCompressComplete'|translate}}
+            </strong>
+            <strong ng-show="downloadBean.status === 'error'" class="font-red">
+                {{downloadBean.error}}
+            </strong>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-blue"
+           target="_blank"
+           ng-show="downloadBean.status === 'success'"
+           ng-href="{{downloadBean.downloadUrl || '#!'}}">
+            {{'msg259'| translate}}</a>
+        <a href="#" class="btn btn-white-blue" data-dismiss="modal">{{'msg539'| translate}}</a>
+    </div>
+</div>

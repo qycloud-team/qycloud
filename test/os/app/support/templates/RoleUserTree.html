@@ -1,0 +1,37 @@
+<div class="role-user-tree">
+    <div class="row-fluid first">
+        <div search-box
+             placeholder="搜索"
+             search="onSearch(searchKey)"
+             cancel="goBack()">
+        </div>
+    </div>
+    <div class="row-fluid" ng-show="mode === 'normal'">
+        <ul class="ztree qyc-tree role-tree" ng-transclude>
+        </ul>
+    </div>
+    <div ng-show="mode === 'search'" class="search-list">
+        <div class="row-fluid search">
+            <strong>搜索到的用户:</strong>
+
+            <div class="font-mini" ng-show="searchList.length === 0">
+                没有搜索到匹配的用户
+            </div>
+            <div class="row-fluid search-item" ng-repeat="user in searchList"
+                 ng-click="doSelectUser(user)">
+                <div user-item user="user"></div>
+            </div>
+        </div>
+        <div class="row-fluid search">
+            <strong>搜索到的角色:</strong>
+
+            <div class="font-mini" ng-show="roleList.length === 0">
+                没有搜索到匹配的角色
+            </div>
+            <ul class="search-item row-fluid" ng-repeat="role in roles" ng-click="doSelectRole(role)">
+                <li class="span2 ar"><i class="icon-custom-role-manage"></i></li>
+                <li class="span10">{{role.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>

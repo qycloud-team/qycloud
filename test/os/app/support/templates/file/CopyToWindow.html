@@ -1,0 +1,15 @@
+<div id="folderTreeWindow" class="modal fade hide modal-window" modal-show="modal.copyToWindow">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-header-title">复制到</h3>
+    </div>
+    <div class="modal-body">
+        <div class="folders-tree common-box" style="border:0;margin-left:15px;">
+            <div person-folder-tree settings="{'showManageFolder': true,'showCheckBox':false}" onselect="onSelectFolder(selectFolder)"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <span class="btn ok-folders-select-btn btn-blue" ng-click="onConfirm()">{{'msg86'|translate}}</span>
+        <span class="btn cancel-folders-select-btn btn-white-blue" data-dismiss="modal">{{'msg87'|translate}}</span>
+    </div>
+</div>

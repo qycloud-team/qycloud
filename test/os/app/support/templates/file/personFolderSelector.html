@@ -1,0 +1,19 @@
+<div class="modal fade person-folder-selector"
+     modal-show="toggleby">
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button>
+        <h3>{{modalTitle}}</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid"
+             ng-if="toggleby"
+             person-folder-tree
+             settings="{'showManageFolder': false,'showCheckBox':false}"
+             onselect="onSelectFolder(selectFolder)">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-blue" ng-click="confirmSelect()">确定</button>
+        <button class="btn btn-white-blue" data-dismiss="modal">取消</button>
+    </div>
+</div>

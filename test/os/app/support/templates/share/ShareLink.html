@@ -1,0 +1,67 @@
+<div class="modal fade share-link"
+     modal-show="modal.shareLink">
+    <div class="modal-header">
+        <button type="button" class="close close-modal" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3><i class="icon-custom-share-white"></i>{{'msg468'|translate}}:{{'msgFolder'|translate}}
+            {{'msgFile'|translate}}
+            "{{file.name}}"</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row-fluid">
+            <div class="inline-block left share-msg">
+                <i class="icon-custom-ok-share"></i>{{'msgShareSuccess'|translate}}
+            </div>
+            <div class="inline-block right share-operate">
+                <a class="view-share" href="{{entLink.href}}" target="_blank" id="linkHref">{{'msgViewSharePage'|translate}}</a>
+                <span class="pipe">|</span>
+                <a class="cancel-share" ng-click="deleteLink()">{{'msg507'|translate}}</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li ng-class="tab == 'copy' && 'active'" ng-click=" tab = 'copy'">
+                    <a href="#share-copy-tab" data-toggle="tab">{{'msgShareLink'|translate}}</a>
+                </li>
+                <li ng-class="tab == 'send' && 'active'" ng-click="tab = 'send'">
+                    <a href="#share-send-tab" data-toggle="tab">{{'msgSendMailMobile'|translate}}</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane share-copy-tab"
+                     ng-class="tab == 'copy' && 'active'"
+                     id="share-copy-tab">
+                    <link rel="import" href="ShareCopyView.html?__inline">
+                </div>
+                <!--发送到手机或邮箱-->
+                <div class="tab-pane share-send-tab"
+                     ng-class="tab == 'send' && 'active'"
+                     id="share-send-tab">
+                    <link rel="import" href="ShareSendView.html?__inline">
+                </div>
+            </div>
+        </div>
+        <div class="share-choose">
+            <div class="inline-block fl choosing">
+                <span class="check-txt">{{'msgSelectShareType'|translate}}&nbsp;&nbsp;</span>
+                <select class="inline-block link-type" ng-model="entLink.type" ng-click="updateType()">
+                    <option value="Preview" title="{{' msgShareOnlyRead'|translate}}">{{'msg421'|translate}}</option>
+                    <option value="Download" title="{{' msgShareReadDownload'|translate}}">{{'msg501'|translate}}
+                    </option>
+                    <option value="Upload" title="{{'msgUserUpload'|translate}}">{{'msg422'|translate}}</option>
+                </select>
+            </div>
+            <div class="inline-block fr setting">
+                <span class='checkbox-sprite'
+                      ng-class="entLink.https && 'true'"
+                      ng-click="updateHttps()">
+                </span>
+                <span>{{'msg24'|translate}}</span>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a class="btn btn-white-blue close-modal" data-dismiss="modal">{{'msg141'|translate}}</a>
+    </div>
+</div>
