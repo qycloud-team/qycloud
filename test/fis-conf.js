@@ -9,14 +9,14 @@ fis.config.set("roadmap.path", [
         useSprite: false,
         useOptimizer: false,
         id: '$1',
-        url: '/os/sea-modules/$1.$2',
-        release: '/os/sea-modules/$1.$2'
+        url: '/test/sea-modules/$1.$2',
+        release: '/test/sea-modules/$1.$2'
     },
     {
         reg: /^\/sea-modules\/(.*)\.(json|swf)$/i,
         isMod: false,
         useSprite: false,
-        release: '/os/sea-modules/$1.$2'
+        release: '/test/sea-modules/$1.$2'
     },
     {
         reg: /^\/app\/(.*)\.(js|coffee|less|css)$/i,
@@ -26,8 +26,8 @@ fis.config.set("roadmap.path", [
         isAngular: true,
         //id是去掉sea-modules和.js后缀中间的部分
         id: 'app/$1',
-        url: '/os/sea-modules/app/$1.$2',
-        release: '/os/app/$1.$2'
+        url: '/test/sea-modules/app/$1.$2',
+        release: '/test/app/$1.$2'
     },
     {
         //sea-modules目录下的其他文件
@@ -42,7 +42,7 @@ fis.config.set("roadmap.path", [
         reg: /\/pages\/(\w*)\.html/i,
         isMod: false,
         useMap: false,
-        release: '/os/$1.html'
+        release: '/test/$1.html'
     },
     {
         reg: '/assets/css/less/*.less',
@@ -52,25 +52,25 @@ fis.config.set("roadmap.path", [
         reg: '/assets/img/**',
         useOptimizer: false,
         useSprite: false,
-        release: '/os/$&'
+        release: '/test/$&'
     },
     {
         reg: '/assets/js/**',
         useOptimizer: false,
-        release: '/os/$&'
+        release: '/test/$&'
     },
     {
         reg: '/assets/**',
         isMod: false,
         useMap: false,
         isOptimize: false,
-        release: '/os/$&'
+        release: '/test/$&'
     },
     {
         reg: '/mobile/**',
         isMode: false,
         useMap: false,
-        release: '/os/$&'
+        release: '/test/$&'
     },
     {
         reg: '**.md',
@@ -82,7 +82,7 @@ fis.config.set("roadmap.path", [
     },
     {
         reg: "**",
-        release: "/os/$&"
+        release: "/test/$&"
     }
 ]);
 
