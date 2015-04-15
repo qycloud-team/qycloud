@@ -27,7 +27,7 @@
   "author": "googleyufei",
   "license": "MIT",
   "dependencies": {
-    "fis": "1.7.14",
+    "fis": "~1.9.13",
     "fis-parser-coffee-script": "0.0.2",
     "fis-parser-less": "0.1.1",
     "fis-parser-utc": "0.0.2",
